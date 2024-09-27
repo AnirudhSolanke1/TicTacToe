@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.game {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px; /* Limit maximum width */
+  margin: 0 auto;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.square {
+  width: 100%;
+  padding-top: 100%; /* Aspect ratio 1:1 */
+  position: relative;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: #ffffff;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.square:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.square:before {
+  content: '';
+  display: block;
+  padding-top: 100%; /* Maintain square shape */
+}
+
+.status {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.reset {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reset:hover {
+  background-color: #c82333;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .square {
+    font-size: 1.5em; /* Adjust font size for smaller screens */
+  }
+
+  .status {
+    font-size: 1.2em; /* Adjust status font size */
+  }
+
+  .reset {
+    font-size: 0.9em; /* Adjust reset button font size */
+  }
+}
